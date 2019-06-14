@@ -13,10 +13,10 @@ namespace HomeApi.WindowsCommander.Api.Controllers
             switch (state)
             {
                 case WindowState.Close:
-                    User32.IssueSystemCommand(name, SysCommand.SC_CLOSE);
+                    WindowStateMessenger.Close(name);
                     break;
                 case WindowState.Minimize:
-                    User32.IssueSystemCommand(name, SysCommand.SC_MINIMIZE);
+                    WindowStateMessenger.Minimize(name);
                     break;
             }
         }
